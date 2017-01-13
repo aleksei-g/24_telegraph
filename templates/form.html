@@ -1,6 +1,6 @@
 {% extends '_main.html' %}
 {% block main %}
-    <form method="POST" action="/save/{{ article_id }}">
+    <form method="POST">
     <div class="form-group">
       <input name="header" class="form-control" placeholder="Заголовок" value="{{ header }}" required autofocus/>
     </div>
@@ -11,7 +11,7 @@
       <textarea name="body" class="form-control" rows="10" placeholder="Ваша история" required>{{ body }}</textarea>
     </div>
     <div class="form-group">
-      <button class="btn btn-primary" type="submit">Опубликовать</button>
+      <button class="btn btn-primary" type="button" onclick="SendForm()">Опубликовать</button>
     </div>
     </form>
 {% endblock %}

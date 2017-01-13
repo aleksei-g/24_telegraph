@@ -1,12 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for, \
-    make_response
+from flask import Flask, render_template, request, redirect, url_for, json
 from os import urandom
 import binascii
 
-
 app = Flask(__name__)
 app.config.from_object('config')
-
 
 from models import db, Articles
 
@@ -47,10 +44,11 @@ def save_article(article_id=None):
                            )
     db.session.add(article)
     db.session.commit()
-    resp = make_response(redirect(url_for('.show_article',
-                                          article_id=article.id)))
-    resp.set_cookie('user_id', user_id, max_age=604800)
-    return resp
+    return json.dumps({'status': 'ok',
+                       'path': article.id,
+                       'cookie_str': 'user_id={}; max-age={}'.format(user_id,
+                                                                     604800)
+                       })
 
 
 @app.route('/edit/<int:article_id>')
