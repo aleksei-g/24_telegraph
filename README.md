@@ -2,7 +2,8 @@
 
 # Свой телеграф
 
-Приложение [Anonymous](http:///) представляет собой аналог сайта **Telegraph**
+Приложение [Anonymous](https://shielded-anchorage-43765.herokuapp.com/)
+представляет собой аналог сайта **Telegraph**
 [http://telegra.ph/](http://telegra.ph/).
 
 Оно позволяет любому пользователю разместить статью и получить для нее
