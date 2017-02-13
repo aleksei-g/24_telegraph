@@ -1,7 +1,0 @@
-{% extends '_main.html' %}
-{% block main %}
-    <h1>{{ header }}</h1>
-    <p class="text-muted">{{ signature }}</p>
-    <p>{{ body|safe }}</p>
-    {% if edit %}<a class="btn btn-primary" href="edit/{{ article_id }}" role="button">Редактировать</a>{% endif %}
-{% endblock %}
