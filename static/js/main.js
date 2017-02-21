@@ -8,6 +8,7 @@ $(function(){
 });
 
 $("#postForm").submit(function(event) {
+  $("#submit").prop('disabled', true);
   event.preventDefault();
   $.ajax({
     url: '/save/'+$('form').find( 'input[name="author_id"]' ).val( ),
@@ -26,6 +27,7 @@ $("#postForm").submit(function(event) {
       if (response.author == true) {
         $("div#result .edit-btn").show();
       };
+      $("#submit").prop('disabled', false);
     },
   });
 });
